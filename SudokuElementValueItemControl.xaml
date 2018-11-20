@@ -15,10 +15,15 @@
         <Style x:Key="FalseStyle" TargetType="Canvas">
             <Setter Property="Background" Value="Green"/>
         </Style>
-        <!--<local:SudokuElementValueItemToObjectConverter Index="1" x:Key="ElementValueItemToBooleanConverter" TrueObject="{StaticResource TrueStyle}" FalseObject="{StaticResource FalseStyle}"/>-->
-        <local:SudokuElementValueItemToObjectConverter Index="{Binding Path=IndexX,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}}" x:Key="ElementValueItemToBooleanConverter" TrueObject="{StaticResource TrueStyle}" FalseObject="{StaticResource FalseStyle}"/>
+        <local:SudokuElementValueItemToObjectConverter x:Key="ElementValueItemToBooleanConverter" TrueObject="{StaticResource TrueStyle}" FalseObject="{StaticResource FalseStyle}"/>
     </UserControl.Resources>
-    <Canvas HorizontalAlignment="Left" Style="{Binding ElementValue,Mode=OneWay,Converter={StaticResource ElementValueItemToBooleanConverter}}" VerticalAlignment="Top" Width="10" Height="10"
+    <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10"
              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}}">
+        <Canvas.Style>
+            <MultiBinding Converter="{StaticResource ElementValueItemToBooleanConverter}">
+                <Binding Path="IndexX" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
+                <Binding Path="ElementValue" Mode="OneWay" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
+            </MultiBinding>
+        </Canvas.Style>
     </Canvas>
 </UserControl>

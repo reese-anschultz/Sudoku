@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 
 namespace Sudoku
 {
-    // Using Freezable instead of DependencyObject allows this to be part of the inheritance tree when not frozen
-    public class PredicateToObjectConverter : /*DependencyObject*/Freezable, IValueConverter
+    public class PredicateToObjectConverter : IMultiValueConverter
     {
         public object TrueObject { get; set; }
         public object FalseObject { get; set; }
-        virtual protected Predicate<object> Predicate { get; set; } = (value) => value != null;
+        virtual protected Predicate<object[]> MultiValuePredicate { get; set; } = (values) => !(values == null || values.Any(o => o == null));
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return (Predicate(value) ? TrueObject : FalseObject);
+            if (values == null || values.Any(o => o == null || o == DependencyProperty.UnsetValue))
+                return (DependencyProperty.UnsetValue);
+
+            return (MultiValuePredicate(values) ? TrueObject : FalseObject);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
-        }
-
-        // This method is required to be a Freezable, even though we aren't using the Freezable functionality
-        protected override Freezable CreateInstanceCore()
-        {
-            throw new NotImplementedException();
-            //return new PredicateToObjectConverter()
         }
     }
 }

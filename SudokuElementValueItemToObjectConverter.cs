@@ -1,29 +1,23 @@
-﻿using System;
-using System.Globalization;
-using System.Windows;
-using System.Windows.Data;
-
-namespace Sudoku
+﻿namespace Sudoku
 {
     public class SudokuElementValueItemToObjectConverter : PredicateToObjectConverter
     {
-        public static readonly DependencyProperty IndexProperty =
-             DependencyProperty.Register("Index",
-                 typeof(int),
-                 typeof(SudokuElementValueItemToObjectConverter),
-                 new FrameworkPropertyMetadata(default(int), FrameworkPropertyMetadataOptions.AffectsRender));
-        public int Index
-        {
-            get { return (int)GetValue(IndexProperty); }
-            set { SetValue(IndexProperty, value); }
-        }
-
         public SudokuElementValueItemToObjectConverter()
         {
-            Predicate = (object value) =>
+            MultiValuePredicate = (object[] values) =>
             {
-                var v = (SudokuElementSet<uint>.SudokuElementValue)value;
-                var i = Index;// System.Convert.ToUInt16(Index);
+                if (values.Length != 2)
+                    return (false);
+
+                // Allow arguments to be passed in either order
+                if (values[0].GetType() == typeof(int))    // If the index is first
+                {
+                    var a = values[0];
+                    values[0] = values[1];
+                    values[1] = a;
+                }
+                var v = (SudokuElementSet<uint>.SudokuElementValue)(values[0]);
+                var i = (int)values[1];
                 if (v.ElementSet.Value.Count <= i)
                     return false;
 
