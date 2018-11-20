@@ -19,15 +19,15 @@ namespace Sudoku
             set { SetValue(ElementValueProperty, value); }
         }
 
-        public static readonly DependencyProperty IndexXProperty =
-             DependencyProperty.Register("IndexX",
+        public static readonly DependencyProperty IndexProperty =
+             DependencyProperty.Register("Index",
                  typeof(int),
                  typeof(SudokuElementValueItemControl),
                  new FrameworkPropertyMetadata(default(int), FrameworkPropertyMetadataOptions.AffectsRender));
-        public int IndexX
+        public int Index
         {
-            get { return (int)GetValue(IndexXProperty); }
-            set { SetValue(IndexXProperty, value); }
+            get { return (int)GetValue(IndexProperty); }
+            set { SetValue(IndexProperty, value); }
         }
 
         public SudokuElementValueItemControl()

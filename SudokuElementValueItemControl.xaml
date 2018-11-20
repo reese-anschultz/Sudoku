@@ -7,7 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              >
-    <!--DataContext="{Binding RelativeSource={RelativeSource Self}}"-->
     <UserControl.Resources>
         <Style x:Key="TrueStyle" TargetType="Canvas">
             <Setter Property="Background" Value="Blue" />
@@ -17,12 +16,11 @@
         </Style>
         <local:SudokuElementValueItemToObjectConverter x:Key="ElementValueItemToBooleanConverter" TrueObject="{StaticResource TrueStyle}" FalseObject="{StaticResource FalseStyle}"/>
     </UserControl.Resources>
-    <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10"
-             DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}}">
+    <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10">
         <Canvas.Style>
             <MultiBinding Converter="{StaticResource ElementValueItemToBooleanConverter}">
-                <Binding Path="IndexX" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
                 <Binding Path="ElementValue" Mode="OneWay" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
+                <Binding Path="Index" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
             </MultiBinding>
         </Canvas.Style>
     </Canvas>

@@ -24,16 +24,16 @@
             <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
             <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
             <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="{Binding N}" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="0" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="1" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="2" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="3" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="4" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="5" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="6" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="7" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl IndexX="8" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="{Binding N}" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="0" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="1" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="2" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="3" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="4" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="5" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="6" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="7" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:SudokuElementValueItemControl Index="8" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
             <Button Content="Go" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click" />
         </StackPanel>
     </Grid>
