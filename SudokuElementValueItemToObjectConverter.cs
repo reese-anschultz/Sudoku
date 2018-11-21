@@ -1,6 +1,6 @@
 ﻿namespace Sudoku
 {
-    public class SudokuElementValueItemToObjectConverter : PredicateToObjectConverter
+    public class SudokuElementValueItemToObjectConverter : MultiValueToObjectUsingPredicateConverter
     {
         public SudokuElementValueItemToObjectConverter()
         {

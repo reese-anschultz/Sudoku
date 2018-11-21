@@ -57,12 +57,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
     <Compile Include="SudokuElement.cs" />
     <Compile Include="SudokuElementSet.cs" />
     <Compile Include="SudokuElementValueItemControl.xaml.cs">
       <DependentUpon>SudokuElementValueItemControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PredicateToObjectConverter.cs" />
     <Compile Include="SudokuElementValueItemToObjectConverter.cs" />
     <Compile Include="SudokuElementValueControl.xaml.cs">
       <DependentUpon>SudokuElementValueControl.xaml</DependentUpon>

@@ -6,7 +6,7 @@ using System.Windows.Data;
 
 namespace Sudoku
 {
-    public class PredicateToObjectConverter : IMultiValueConverter
+    public class MultiValueToObjectUsingPredicateConverter : IMultiValueConverter
     {
         public object TrueObject { get; set; }
         public object FalseObject { get; set; }
