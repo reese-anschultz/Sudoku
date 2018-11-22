@@ -9,8 +9,8 @@ namespace Sudoku
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var v = (SudokuElementSetOfUint.SudokuElementValue)value;
-            return v.Count == 0 ? "" : v.Count == 1 ? v.First().Representation.ToString() : "*";
+            var v = (ClosedSudokuElementSet.SudokuElementValue)value;
+            return (v == null || v.Count == 0) ? "" : v.Count == 1 ? v.First().Representation.ToString() : "*";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

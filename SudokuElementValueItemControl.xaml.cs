@@ -1,23 +1,22 @@
 ﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Sudoku
 {
     /// <summary>
     /// Interaction logic for SudokuElementValueControl.xaml
     /// </summary>
-    public partial class SudokuElementValueItemControl : UserControl
+    public partial class SudokuElementValueItemControl
     {
         public static readonly DependencyProperty ElementValueProperty =
              DependencyProperty.Register("ElementValue",
-                 typeof(SudokuElementSetOfUint.SudokuElementValue),
+                 typeof(ClosedSudokuElementSet.SudokuElementValue),
                  typeof(SudokuElementValueItemControl),
-                 new FrameworkPropertyMetadata(new SudokuElementSetOfUint.SudokuElementValue(), FrameworkPropertyMetadataOptions.AffectsRender));
-        public SudokuElementSetOfUint.SudokuElementValue ElementValue
+                 new FrameworkPropertyMetadata(new ClosedSudokuElementSet.SudokuElementValue(), FrameworkPropertyMetadataOptions.AffectsRender));
+        public ClosedSudokuElementSet.SudokuElementValue ElementValue
         {
-            get { return (SudokuElementSetOfUint.SudokuElementValue)GetValue(ElementValueProperty); }
-            set { SetValue(ElementValueProperty, value); }
+            get => (ClosedSudokuElementSet.SudokuElementValue)GetValue(ElementValueProperty);
+            set => SetValue(ElementValueProperty, value);
         }
 
         public static readonly DependencyProperty ElementProperty =
@@ -27,15 +26,15 @@ namespace Sudoku
                  new FrameworkPropertyMetadata(default(ClosedSudokuElement), FrameworkPropertyMetadataOptions.AffectsRender));
         public ClosedSudokuElement Element
         {
-            get { return (ClosedSudokuElement)GetValue(ElementProperty); }
-            set { SetValue(ElementProperty, value); }
+            get => (ClosedSudokuElement)GetValue(ElementProperty);
+            set => SetValue(ElementProperty, value);
         }
 
         public SudokuElementValueItemControl()
         {
             InitializeComponent();
             // Make a clone of the default ElementValue so that each control instance does not share the default instance
-            ElementValue = new SudokuElementSetOfUint.SudokuElementValue(ElementValue.ElementSet, ElementValue.ToArray());
+            ElementValue = new ClosedSudokuElementSet.SudokuElementValue(ElementValue.ElementSet, ElementValue.ToArray());
         }
     }
 }

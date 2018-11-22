@@ -7,25 +7,25 @@ namespace Sudoku
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-        public SudokuElementSetOfUint Es;
+        public ClosedSudokuElementSet Es;
 
         public static readonly DependencyProperty NProperty =
              DependencyProperty.Register("N", typeof(string),
              typeof(MainWindow));
         public static readonly DependencyProperty EProperty =
-             DependencyProperty.Register("E", typeof(SudokuElementSetOfUint.SudokuElementValue),
+             DependencyProperty.Register("E", typeof(ClosedSudokuElementSet.SudokuElementValue),
              typeof(MainWindow));
         public string N
         {
-            get { return (string)GetValue(NProperty); }
-            set { SetValue(NProperty, value); }
+            get => (string)GetValue(NProperty);
+            set => SetValue(NProperty, value);
         }
-        public SudokuElementSetOfUint.SudokuElementValue E
+        public ClosedSudokuElementSet.SudokuElementValue E
         {
-            get { return (SudokuElementSetOfUint.SudokuElementValue)GetValue(EProperty); }
-            set { SetValue(EProperty, value); }
+            get => (ClosedSudokuElementSet.SudokuElementValue)GetValue(EProperty);
+            set => SetValue(EProperty, value);
         }
 
         public MainWindow()
@@ -37,13 +37,13 @@ namespace Sudoku
             {
                 l.Add(new ClosedSudokuElement(ui));
             }
-            Es = new SudokuElementSetOfUint(l);
+            Es = new ClosedSudokuElementSet(l);
             E = Es.MakeElementValue(Es.Value);  // All values
             N = "0";
             InitializeComponent();
         }
 
-        static int n = 0;
+        static int _n;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -54,13 +54,13 @@ namespace Sudoku
             {
                 N = "0";
             }
-            switch (n++)
+            switch (_n++)
             {
                 case 0:
-                    E = Es.MakeElementValue(new ClosedSudokuElement[] { Es.Value.First() });    // First value
+                    E = Es.MakeElementValue(new[] { Es.Value.First() });    // First value
                     break;
                 case 1:
-                    E = Es.MakeElementValue(new ClosedSudokuElement[] { Es.Value[1], Es.Value[2] }); // Second and third values
+                    E = Es.MakeElementValue(new[] { Es.Value[1], Es.Value[2] }); // Second and third values
                     break;
                 case 2:
                     E = Es.MakeElementValue(new ClosedSudokuElement[] { }); // No values
