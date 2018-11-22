@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Sudoku
 {
-    [TypeConverter(typeof(SudokuElementConverter))]
+    [TypeConverter(typeof(ClosedSudokuElementConverter))]
     public class ClosedSudokuElement : SudokuElement<uint>
     {
         public ClosedSudokuElement(uint representation) : base(representation)

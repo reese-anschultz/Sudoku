@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace Sudoku
 {
-    internal class SudokuElementConverter : TypeConverter
+    internal class ClosedSudokuElementConverter : TypeConverter
     {
         //
         // Summary:
