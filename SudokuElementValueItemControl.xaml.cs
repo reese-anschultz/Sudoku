@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Sudoku
@@ -21,12 +22,12 @@ namespace Sudoku
 
         public static readonly DependencyProperty ElementProperty =
              DependencyProperty.Register("Element",
-                 typeof(SudokuElement<uint>),
+                 typeof(ClosedSudokuElement),
                  typeof(SudokuElementValueItemControl),
-                 new FrameworkPropertyMetadata(default(SudokuElement<uint>), FrameworkPropertyMetadataOptions.AffectsRender));
-        public SudokuElement<uint> Element
+                 new FrameworkPropertyMetadata(default(ClosedSudokuElement), FrameworkPropertyMetadataOptions.AffectsRender));
+        public ClosedSudokuElement Element
         {
-            get { return (SudokuElement<uint>)GetValue(ElementProperty); }
+            get { return (ClosedSudokuElement)GetValue(ElementProperty); }
             set { SetValue(ElementProperty, value); }
         }
 
@@ -34,7 +35,7 @@ namespace Sudoku
         {
             InitializeComponent();
             // Make a clone of the default ElementValue so that each control instance does not share the default instance
-            ElementValue = new SudokuElementSetOfUint.SudokuElementValue(ElementValue.ElementSet, ElementValue);
+            ElementValue = new SudokuElementSetOfUint.SudokuElementValue(ElementValue.ElementSet, ElementValue.ToArray());
         }
     }
 }

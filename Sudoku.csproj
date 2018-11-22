@@ -57,8 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClosedSudokuElement.cs" />
     <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
     <Compile Include="SudokuElement.cs" />
+    <Compile Include="SudokuElementConverter.cs" />
     <Compile Include="SudokuElementSet.cs" />
     <Compile Include="SudokuElementSetOfUint.cs" />
     <Compile Include="SudokuElementValueItemControl.xaml.cs">

@@ -32,10 +32,10 @@ namespace Sudoku
         {
             const uint width = 3;
             const uint height = 2;
-            var l = new List<SudokuElement<uint>>();
+            var l = new List<ClosedSudokuElement>();
             for (uint ui = 0; ui < width * height; ++ui)
             {
-                l.Add(new SudokuElement<uint>(ui));
+                l.Add(new ClosedSudokuElement(ui));
             }
             Es = new SudokuElementSetOfUint(l);
             E = Es.MakeElementValue(Es.Value);  // All values
@@ -57,13 +57,13 @@ namespace Sudoku
             switch (n++)
             {
                 case 0:
-                    E = Es.MakeElementValue(new SudokuElement<uint>[] { Es.Value.First() });    // First value
+                    E = Es.MakeElementValue(new ClosedSudokuElement[] { Es.Value.First() });    // First value
                     break;
                 case 1:
-                    E = Es.MakeElementValue(new SudokuElement<uint>[] { Es.Value[1], Es.Value[2] }); // Second and third values
+                    E = Es.MakeElementValue(new ClosedSudokuElement[] { Es.Value[1], Es.Value[2] }); // Second and third values
                     break;
                 case 2:
-                    E = Es.MakeElementValue(new SudokuElement<uint>[] { }); // No values
+                    E = Es.MakeElementValue(new ClosedSudokuElement[] { }); // No values
                     break;
                 case 3:
                     E = Es.MakeElementValue(Es.Value);  // All values

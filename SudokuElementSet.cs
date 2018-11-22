@@ -5,53 +5,58 @@ using System.Linq;
 
 namespace Sudoku
 {
-    public class SudokuElementSet<T> where T : IComparable<T>
+    public class SudokuElementSet<T> where T : class
     {
-        //public readonly Type ElementType = typeof(SudokuElement<T>);
-        public ImmutableSortedSet<SudokuElement<T>> Value { get; }
-        public SudokuElementSet(IEnumerable<SudokuElement<T>> values)
+        //public readonly Type ElementType = typeof(T);
+        public ImmutableSortedSet<T> Value { get; }
+        public SudokuElementSet(IEnumerable<T> values)
         {
             Value = ImmutableSortedSet.CreateRange(values);
         }
 
-        public class SudokuElementValue : SortedSet<SudokuElement<T>>
+        public class SudokuElementValue : SortedSet<T>
         {
             public SudokuElementSet<T> ElementSet { get; }
             public SudokuElementValue()
             {
-                ElementSet = new SudokuElementSet<T>(new SudokuElement<T>[] { });
+                ElementSet = new SudokuElementSet<T>(new T[] { });
             }
-            public SudokuElementValue(SudokuElementSet<T> elementSet, IEnumerable<SudokuElement<T>> initializers) : base(initializers)
+            public SudokuElementValue(SudokuElementSet<T> elementSet, T[] initializers) : base(initializers)
             {
                 ElementSet = elementSet;
                 if (initializers.Any(e => !ElementSet.Value.Contains(e)))
                     throw new Exception("Attempt to construct with foreign element");
             }
-            public new bool Add(SudokuElement<T> item)
+            // ReSharper disable once UnusedMember.Global
+            public new bool Add(T item)
             {
                 if (!ElementSet.Value.Contains(item))
                     throw new Exception("Attempt to Add foreign element");
 
                 return base.Add(item);
             }
-            public new void SymmetricExceptWith(IEnumerable<SudokuElement<T>> other)
+            // ReSharper disable once UnusedMember.Global
+            public new void SymmetricExceptWith(IEnumerable<T> other)
             {
-                if (other.Any(e => !ElementSet.Value.Contains(e)))
+                var enumerable = other as T[] ?? other.ToArray();
+                if (enumerable.Any(e => !ElementSet.Value.Contains(e)))
                     throw new Exception("Attempt to SymmetricExceptWith foreign element");
 
-                base.SymmetricExceptWith(other);
+                base.SymmetricExceptWith(enumerable);
             }
-            public new void UnionWith(IEnumerable<SudokuElement<T>> other)
+            // ReSharper disable once UnusedMember.Global
+            public new void UnionWith(IEnumerable<T> other)
             {
-                if (other.Any(e => !ElementSet.Value.Contains(e)))
+                var enumerable = other as T[] ?? other.ToArray();
+                if (enumerable.Any(e => !ElementSet.Value.Contains(e)))
                     throw new Exception("Attempt to UnionWith foreign element");
 
-                base.UnionWith(other);
+                base.UnionWith(enumerable);
             }
         }
-        public SudokuElementValue MakeElementValue(IEnumerable<SudokuElement<T>> initializers)
+        public SudokuElementValue MakeElementValue(IEnumerable<T> initializers)
         {
-            return new SudokuElementValue(this, initializers);
+            return new SudokuElementValue(this, initializers.ToArray());
         }
     }
 }

@@ -10,7 +10,11 @@ namespace Sudoku
     {
         public object TrueObject { get; set; }
         public object FalseObject { get; set; }
-        virtual protected Predicate<object[]> MultiValuePredicate { get; set; } = (values) => !(values == null || values.Any(o => o == null));
+
+        protected virtual bool MultiValuePredicate(object[] values)
+        {
+            return !(values == null || values.Any(o => o == null));
+        }
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {

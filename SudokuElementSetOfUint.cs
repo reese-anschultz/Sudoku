@@ -2,9 +2,9 @@
 
 namespace Sudoku
 {
-    public class SudokuElementSetOfUint : SudokuElementSet<uint>
+    public class SudokuElementSetOfUint : SudokuElementSet<ClosedSudokuElement>
     {
-        public SudokuElementSetOfUint(IEnumerable<SudokuElement<uint>> values) : base(values)
+        public SudokuElementSetOfUint(IEnumerable<ClosedSudokuElement> values) : base(values)
         {
         }
     }
