@@ -20,7 +20,7 @@
         <Canvas.Style>
             <MultiBinding Converter="{StaticResource ElementValueItemToBooleanConverter}">
                 <Binding Path="ElementValue" Mode="OneWay" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
-                <Binding Path="Index" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
+                <Binding Path="Element" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=local:SudokuElementValueItemControl}"/>
             </MultiBinding>
         </Canvas.Style>
     </Canvas>

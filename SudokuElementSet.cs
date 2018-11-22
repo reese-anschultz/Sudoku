@@ -7,10 +7,11 @@ namespace Sudoku
 {
     public class SudokuElementSet<T> where T : IComparable<T>
     {
+        //public readonly Type ElementType = typeof(SudokuElement<T>);
         public ImmutableSortedSet<SudokuElement<T>> Value { get; }
-        public SudokuElementSet(IEnumerable<SudokuElement<T>> value)
+        public SudokuElementSet(IEnumerable<SudokuElement<T>> values)
         {
-            Value = ImmutableSortedSet.CreateRange(value);
+            Value = ImmutableSortedSet.CreateRange(values);
         }
 
         public class SudokuElementValue : SortedSet<SudokuElement<T>>
@@ -50,7 +51,7 @@ namespace Sudoku
         }
         public SudokuElementValue MakeElementValue(IEnumerable<SudokuElement<T>> initializers)
         {
-            return new SudokuElementValue(this,initializers);
+            return new SudokuElementValue(this, initializers);
         }
     }
 }

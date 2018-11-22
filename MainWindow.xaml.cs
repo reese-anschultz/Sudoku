@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Sudoku
 {
@@ -20,22 +9,22 @@ namespace Sudoku
     /// </summary>
     public partial class MainWindow : Window
     {
-        public SudokuElementSet<uint> Es;
+        public SudokuElementSetOfUint Es;
 
         public static readonly DependencyProperty NProperty =
              DependencyProperty.Register("N", typeof(string),
              typeof(MainWindow));
         public static readonly DependencyProperty EProperty =
-             DependencyProperty.Register("E", typeof(SudokuElementSet<uint>.SudokuElementValue),
+             DependencyProperty.Register("E", typeof(SudokuElementSetOfUint.SudokuElementValue),
              typeof(MainWindow));
         public string N
         {
             get { return (string)GetValue(NProperty); }
             set { SetValue(NProperty, value); }
         }
-        public SudokuElementSet<uint>.SudokuElementValue E
+        public SudokuElementSetOfUint.SudokuElementValue E
         {
-            get { return (SudokuElementSet<uint>.SudokuElementValue)GetValue(EProperty); }
+            get { return (SudokuElementSetOfUint.SudokuElementValue)GetValue(EProperty); }
             set { SetValue(EProperty, value); }
         }
 
@@ -43,17 +32,14 @@ namespace Sudoku
         {
             const uint width = 3;
             const uint height = 2;
-            if (width * height > 9)
-                throw new Exception("Combination of width and height are too large");
-
             var l = new List<SudokuElement<uint>>();
             for (uint ui = 0; ui < width * height; ++ui)
             {
-                l.Add(new SudokuElement<uint>(ui/*.ToString()*/));
+                l.Add(new SudokuElement<uint>(ui));
             }
-            Es = new SudokuElementSet<uint>(l);
+            Es = new SudokuElementSetOfUint(l);
             E = Es.MakeElementValue(Es.Value);  // All values
-            N = "InitializedInMainWindow";
+            N = "0";
             InitializeComponent();
         }
 

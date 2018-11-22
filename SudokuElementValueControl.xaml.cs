@@ -10,19 +10,20 @@ namespace Sudoku
     {
         public static readonly DependencyProperty ElementValueProperty =
              DependencyProperty.Register("ElementValue",
-                 typeof(SudokuElementSet<uint>.SudokuElementValue),
+                 typeof(SudokuElementSetOfUint.SudokuElementValue),
                  typeof(SudokuElementValueControl),
-                 new FrameworkPropertyMetadata(new SudokuElementSet<uint>.SudokuElementValue(),FrameworkPropertyMetadataOptions.AffectsRender));
-        public SudokuElementSet<uint>.SudokuElementValue ElementValue
+                 new FrameworkPropertyMetadata(new SudokuElementSetOfUint.SudokuElementValue(), FrameworkPropertyMetadataOptions.AffectsRender));
+        public SudokuElementSetOfUint.SudokuElementValue ElementValue
         {
-            get { return (SudokuElementSet<uint>.SudokuElementValue)GetValue(ElementValueProperty); }
+            get { return (SudokuElementSetOfUint.SudokuElementValue)GetValue(ElementValueProperty); }
             set { SetValue(ElementValueProperty, value); }
         }
 
         public SudokuElementValueControl()
         {
             InitializeComponent();
-            ElementValue = new SudokuElementSet<uint>.SudokuElementValue(ElementValue.ElementSet, ElementValue);
+            // Make a clone of the default ElementValue so that each control instance does not share the default instance
+            ElementValue = new SudokuElementSetOfUint.SudokuElementValue(ElementValue.ElementSet, ElementValue);
         }
     }
 }
