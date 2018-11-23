@@ -56,6 +56,7 @@
     <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
     <Compile Include="SudokuElement.cs" />
     <Compile Include="SudokuElementSet.cs" />
+    <Compile Include="SudokuElementValue.cs" />
     <Compile Include="SudokuElementValueItemControl.xaml.cs">
       <DependentUpon>SudokuElementValueItemControl.xaml</DependentUpon>
     </Compile>

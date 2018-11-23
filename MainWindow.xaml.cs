@@ -15,16 +15,16 @@ namespace Sudoku
              DependencyProperty.Register("N", typeof(string),
              typeof(MainWindow));
         public static readonly DependencyProperty EProperty =
-             DependencyProperty.Register("E", typeof(ClosedSudokuElementSet.SudokuElementValue),
+             DependencyProperty.Register("E", typeof(SudokuElementValue<ClosedSudokuElement>),
              typeof(MainWindow));
         public string N
         {
             get => (string)GetValue(NProperty);
             set => SetValue(NProperty, value);
         }
-        public ClosedSudokuElementSet.SudokuElementValue E
+        public SudokuElementValue<ClosedSudokuElement> E
         {
-            get => (ClosedSudokuElementSet.SudokuElementValue)GetValue(EProperty);
+            get => (SudokuElementValue<ClosedSudokuElement>)GetValue(EProperty);
             set => SetValue(EProperty, value);
         }
 
@@ -38,7 +38,7 @@ namespace Sudoku
                 l.Add(new ClosedSudokuElement(ui));
             }
             Es = new ClosedSudokuElementSet(l);
-            E = Es.MakeElementValue(Es.Value);  // All values
+            E = Es.MakeElementValue(Es.Values);  // All values
             N = "0";
             InitializeComponent();
         }
@@ -57,16 +57,16 @@ namespace Sudoku
             switch (_n++)
             {
                 case 0:
-                    E = Es.MakeElementValue(new[] { Es.Value.First() });    // First value
+                    E = Es.MakeElementValue(new[] { Es.Values.First() });    // First value
                     break;
                 case 1:
-                    E = Es.MakeElementValue(new[] { Es.Value[1], Es.Value[2] }); // Second and third values
+                    E = Es.MakeElementValue(new[] { Es.Values[1], Es.Values[2] }); // Second and third values
                     break;
                 case 2:
                     E = Es.MakeElementValue(new ClosedSudokuElement[] { }); // No values
                     break;
                 case 3:
-                    E = Es.MakeElementValue(Es.Value);  // All values
+                    E = Es.MakeElementValue(Es.Values);  // All values
                     break;
             }
         }

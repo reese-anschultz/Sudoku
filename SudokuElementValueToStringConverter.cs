@@ -9,7 +9,7 @@ namespace Sudoku
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var v = (ClosedSudokuElementSet.SudokuElementValue)value;
+            var v = (SudokuElementValue<ClosedSudokuElement>)value;
             return (v == null || v.Count == 0) ? "" : v.Count == 1 ? v.First().Representation.ToString() : "*";
         }
 

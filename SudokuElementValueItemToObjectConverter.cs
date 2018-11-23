@@ -10,7 +10,7 @@ namespace Sudoku
             if (values.Length != 2)
                 return (false);
 
-            var v = (ClosedSudokuElementSet.SudokuElementValue)(values[0]);
+            var v = (SudokuElementValue<ClosedSudokuElement>)(values[0]);
             var e = (ClosedSudokuElement)values[1];
             //TODO Debug.Assert(v.ElementSet.Value.Contains(e));
             return (v.Contains(e));
