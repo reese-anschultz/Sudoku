@@ -4,7 +4,6 @@ namespace Sudoku
 {
     public class SudokuElement<T> : IComparable<SudokuElement<T>> where T : IComparable<T>
     {
-        //public readonly Type RepresentationType = typeof(T);
         public T Representation { get; }
         public SudokuElement(T representation)
         {

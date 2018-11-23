@@ -6,15 +6,10 @@ namespace Sudoku
 {
     public class SudokuElementSet<T> where T : class
     {
-        public ImmutableSortedSet<T> Values { get; }
-        public SudokuElementSet(IEnumerable<T> values)
+        public ImmutableSortedSet<T> Elements { get; }
+        public SudokuElementSet(IEnumerable<T> elements)
         {
-            Values = ImmutableSortedSet.CreateRange(values);
-        }
-
-        public SudokuElementValue<T> MakeElementValue(IEnumerable<T> initializers)
-        {
-            return new SudokuElementValue<T>(this, initializers.ToArray());
+            Elements = ImmutableSortedSet.CreateRange(elements);
         }
     }
 }

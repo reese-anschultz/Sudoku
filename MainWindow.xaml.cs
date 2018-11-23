@@ -38,7 +38,7 @@ namespace Sudoku
                 l.Add(new ClosedSudokuElement(ui));
             }
             Es = new ClosedSudokuElementSet(l);
-            E = Es.MakeElementValue(Es.Values);  // All values
+            E = new SudokuElementValue<ClosedSudokuElement>(Es, Es.Elements.ToArray());
             N = "0";
             InitializeComponent();
         }
@@ -57,16 +57,16 @@ namespace Sudoku
             switch (_n++)
             {
                 case 0:
-                    E = Es.MakeElementValue(new[] { Es.Values.First() });    // First value
+                    E = new SudokuElementValue<ClosedSudokuElement>(Es, new[] { Es.Elements.First() }); // First value
                     break;
                 case 1:
-                    E = Es.MakeElementValue(new[] { Es.Values[1], Es.Values[2] }); // Second and third values
+                    E = new SudokuElementValue<ClosedSudokuElement>(Es, new[] { Es.Elements[1], Es.Elements[2] }); // Second and third values
                     break;
                 case 2:
-                    E = Es.MakeElementValue(new ClosedSudokuElement[] { }); // No values
+                    E = new SudokuElementValue<ClosedSudokuElement>(Es, new ClosedSudokuElement[] { }); // No values
                     break;
                 case 3:
-                    E = Es.MakeElementValue(Es.Values);  // All values
+                    E = new SudokuElementValue<ClosedSudokuElement>(Es, Es.Elements.ToArray()); // All values
                     break;
             }
         }
