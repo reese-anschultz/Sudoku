@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Border BorderBrush="#1266a7" BorderThickness="1">
-        <UniformGrid Name="Grid" HorizontalAlignment="Left" Height="265" Margin="35,25,0,0" VerticalAlignment="Top" Width="215" />
+        <UniformGrid Name="Grid" Height="100" Width="100" />
     </Border>
 </UserControl>
