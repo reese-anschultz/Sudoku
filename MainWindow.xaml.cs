@@ -9,7 +9,7 @@ namespace Sudoku
     /// </summary>
     public partial class MainWindow
     {
-        public ClosedSudokuElementSet Es;
+        public SudokuElementSet<ClosedSudokuElement> Es;
 
         public static readonly DependencyProperty NProperty =
              DependencyProperty.Register("N", typeof(string),
@@ -37,7 +37,7 @@ namespace Sudoku
             {
                 l.Add(new ClosedSudokuElement(ui));
             }
-            Es = new ClosedSudokuElementSet(l);
+            Es = new SudokuElementSet<ClosedSudokuElement>(l);
             E = new SudokuElementValue<ClosedSudokuElement>(Es, Es.Elements.ToArray());
             N = "0";
             InitializeComponent();

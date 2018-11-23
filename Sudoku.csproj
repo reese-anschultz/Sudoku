@@ -52,7 +52,6 @@
     </ApplicationDefinition>
     <Compile Include="ClosedSudokuElement.cs" />
     <Compile Include="ClosedSudokuElementConverter.cs" />
-    <Compile Include="ClosedSudokuElementSet.cs" />
     <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
     <Compile Include="SudokuElement.cs" />
     <Compile Include="SudokuElementSet.cs" />
