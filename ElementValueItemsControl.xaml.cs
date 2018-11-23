@@ -56,7 +56,6 @@ namespace Sudoku
                 valueItem.SetBinding(ElementValueItemControl.ElementValueProperty, binding);
                 uniformGrid.Children.Add(valueItem);
             }
-            uniformGrid.UpdateLayout();
         }
     }
 }
