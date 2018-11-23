@@ -61,6 +61,9 @@
     <Compile Include="ElementValueItemControl.xaml.cs">
       <DependentUpon>ElementValueItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ElementValueItemsControl.xaml.cs">
+      <DependentUpon>ElementValueItemsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ElementValueItemToObjectConverter.cs" />
     <Compile Include="ElementValueToStringConvert.cs" />
     <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
@@ -71,6 +74,10 @@
     <Page Include="ElementValueItemControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementValueItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
