@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace Sudoku
 {
-    internal class ClosedSudokuElementConverter : TypeConverter
+    internal class ClosedElementConverter : TypeConverter
     {
         //
         // Summary:
@@ -45,7 +45,7 @@ namespace Sudoku
         //     true if this converter can perform the conversion; otherwise, false.
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(ClosedSudokuElement))
+            if (destinationType == typeof(ClosedElement))
                 return true;
 
             return base.CanConvertTo(context, destinationType);
@@ -76,7 +76,7 @@ namespace Sudoku
         {
             if (value is string s)
             {
-                return (ClosedSudokuElement)s;
+                return (ClosedElement)s;
             }
             return base.ConvertFrom(context, culture, value);
         }

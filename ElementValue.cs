@@ -4,16 +4,16 @@ using System.Linq;
 
 namespace Sudoku
 {
-    public class SudokuElementValue<T> : SortedSet<T> where T : class
+    public class ElementValue<T> : SortedSet<T> where T : class
     {
-        public SudokuElementSet<T> ReferenceElementSet { get; }
+        public ElementSet<T> ReferenceElementSet { get; }
 
-        public SudokuElementValue()
+        public ElementValue()
         {
-            ReferenceElementSet = new SudokuElementSet<T>(new T[] { });
+            ReferenceElementSet = new ElementSet<T>(new T[] { });
         }
 
-        public SudokuElementValue(SudokuElementSet<T> referenceElementSet, T[] initializers) : base(initializers)
+        public ElementValue(ElementSet<T> referenceElementSet, T[] initializers) : base(initializers)
         {
             ReferenceElementSet = referenceElementSet;
             Debug.Assert(initializers.All(e => ReferenceElementSet.Elements.Contains(e)), "Attempt to construct with foreign element");

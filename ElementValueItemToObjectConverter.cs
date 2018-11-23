@@ -2,7 +2,7 @@
 
 namespace Sudoku
 {
-    public class SudokuElementValueItemToObjectConverter : MultiValueToObjectUsingPredicateConverter
+    public class ElementValueItemToObjectConverter : MultiValueToObjectUsingPredicateConverter
     {
         protected override bool MultiValuePredicate(object[] values)
         {
@@ -10,8 +10,8 @@ namespace Sudoku
             if (values.Length != 2)
                 return (false);
 
-            var v = (SudokuElementValue<ClosedSudokuElement>)(values[0]);
-            var e = (ClosedSudokuElement)values[1];
+            var v = (ElementValue<ClosedElement>)(values[0]);
+            var e = (ClosedElement)values[1];
             //TODO Debug.Assert(v.ElementSet.Value.Contains(e));
             return (v.Contains(e));
         }

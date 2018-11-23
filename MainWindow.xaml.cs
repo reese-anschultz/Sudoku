@@ -9,22 +9,22 @@ namespace Sudoku
     /// </summary>
     public partial class MainWindow
     {
-        public SudokuElementSet<ClosedSudokuElement> Es;
+        public ElementSet<ClosedElement> Es;
 
         public static readonly DependencyProperty NProperty =
              DependencyProperty.Register("N", typeof(string),
              typeof(MainWindow));
         public static readonly DependencyProperty EProperty =
-             DependencyProperty.Register("E", typeof(SudokuElementValue<ClosedSudokuElement>),
+             DependencyProperty.Register("E", typeof(ElementValue<ClosedElement>),
              typeof(MainWindow));
         public string N
         {
             get => (string)GetValue(NProperty);
             set => SetValue(NProperty, value);
         }
-        public SudokuElementValue<ClosedSudokuElement> E
+        public ElementValue<ClosedElement> E
         {
-            get => (SudokuElementValue<ClosedSudokuElement>)GetValue(EProperty);
+            get => (ElementValue<ClosedElement>)GetValue(EProperty);
             set => SetValue(EProperty, value);
         }
 
@@ -32,13 +32,13 @@ namespace Sudoku
         {
             const uint width = 3;
             const uint height = 2;
-            var l = new List<ClosedSudokuElement>();
+            var l = new List<ClosedElement>();
             for (uint ui = 0; ui < width * height; ++ui)
             {
-                l.Add(new ClosedSudokuElement(ui));
+                l.Add(new ClosedElement(ui));
             }
-            Es = new SudokuElementSet<ClosedSudokuElement>(l);
-            E = new SudokuElementValue<ClosedSudokuElement>(Es, Es.Elements.ToArray());
+            Es = new ElementSet<ClosedElement>(l);
+            E = new ElementValue<ClosedElement>(Es, Es.Elements.ToArray());
             N = "0";
             InitializeComponent();
         }
@@ -57,16 +57,16 @@ namespace Sudoku
             switch (_n++)
             {
                 case 0:
-                    E = new SudokuElementValue<ClosedSudokuElement>(Es, new[] { Es.Elements.First() }); // First value
+                    E = new ElementValue<ClosedElement>(Es, new[] { Es.Elements.First() }); // First value
                     break;
                 case 1:
-                    E = new SudokuElementValue<ClosedSudokuElement>(Es, new[] { Es.Elements[1], Es.Elements[2] }); // Second and third values
+                    E = new ElementValue<ClosedElement>(Es, new[] { Es.Elements[1], Es.Elements[2] }); // Second and third values
                     break;
                 case 2:
-                    E = new SudokuElementValue<ClosedSudokuElement>(Es, new ClosedSudokuElement[] { }); // No values
+                    E = new ElementValue<ClosedElement>(Es, new ClosedElement[] { }); // No values
                     break;
                 case 3:
-                    E = new SudokuElementValue<ClosedSudokuElement>(Es, Es.Elements.ToArray()); // All values
+                    E = new ElementValue<ClosedElement>(Es, Es.Elements.ToArray()); // All values
                     break;
             }
         }

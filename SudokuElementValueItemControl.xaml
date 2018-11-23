@@ -14,7 +14,7 @@
         <Style x:Key="FalseStyle" TargetType="Canvas">
             <Setter Property="Background" Value="Green"/>
         </Style>
-        <local:SudokuElementValueItemToObjectConverter x:Key="ElementValueItemToBooleanConverter" TrueObject="{StaticResource TrueStyle}" FalseObject="{StaticResource FalseStyle}"/>
+        <local:ElementValueItemToObjectConverter x:Key="ElementValueItemToBooleanConverter" TrueObject="{StaticResource TrueStyle}" FalseObject="{StaticResource FalseStyle}"/>
     </UserControl.Resources>
     <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10">
         <Canvas.Style>

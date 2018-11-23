@@ -50,20 +50,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ClosedSudokuElement.cs" />
-    <Compile Include="ClosedSudokuElementConverter.cs" />
+    <Compile Include="ClosedElement.cs" />
+    <Compile Include="ClosedElementConverter.cs" />
+    <Compile Include="Element.cs" />
+    <Compile Include="ElementSet.cs" />
+    <Compile Include="ElementValue.cs" />
+    <Compile Include="ElementValueItemToObjectConverter.cs" />
+    <Compile Include="ElementValueToStringConvert.cs" />
     <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
-    <Compile Include="SudokuElement.cs" />
-    <Compile Include="SudokuElementSet.cs" />
-    <Compile Include="SudokuElementValue.cs" />
     <Compile Include="SudokuElementValueItemControl.xaml.cs">
       <DependentUpon>SudokuElementValueItemControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SudokuElementValueItemToObjectConverter.cs" />
     <Compile Include="SudokuElementValueControl.xaml.cs">
       <DependentUpon>SudokuElementValueControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SudokuElementValueToStringConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

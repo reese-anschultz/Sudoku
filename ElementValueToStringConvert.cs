@@ -5,11 +5,11 @@ using System.Windows.Data;
 
 namespace Sudoku
 {
-    public class SudokuElementValueToStringConverter : IValueConverter
+    public class ElementValueToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var v = (SudokuElementValue<ClosedSudokuElement>)value;
+            var v = (ElementValue<ClosedElement>)value;
             return (v == null || v.Count == 0) ? "" : v.Count == 1 ? v.First().Representation.ToString() : "*";
         }
 
