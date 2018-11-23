@@ -4,14 +4,14 @@ using System.Windows;
 namespace Sudoku
 {
     /// <summary>
-    /// Interaction logic for SudokuElementValueControl.xaml
+    /// Interaction logic for ElementValueControl.xaml
     /// </summary>
-    public partial class SudokuElementValueControl //: UserControl
+    public partial class ElementValueItemControl
     {
         public static readonly DependencyProperty ElementValueProperty =
              DependencyProperty.Register("ElementValue",
                  typeof(ElementValue<ClosedElement>),
-                 typeof(SudokuElementValueControl),
+                 typeof(ElementValueItemControl),
                  new FrameworkPropertyMetadata(new ElementValue<ClosedElement>(), FrameworkPropertyMetadataOptions.AffectsRender));
         public ElementValue<ClosedElement> ElementValue
         {
@@ -19,7 +19,18 @@ namespace Sudoku
             set => SetValue(ElementValueProperty, value);
         }
 
-        public SudokuElementValueControl()
+        public static readonly DependencyProperty ElementProperty =
+             DependencyProperty.Register("Element",
+                 typeof(ClosedElement),
+                 typeof(ElementValueItemControl),
+                 new FrameworkPropertyMetadata(default(ClosedElement), FrameworkPropertyMetadataOptions.AffectsRender));
+        public ClosedElement Element
+        {
+            get => (ClosedElement)GetValue(ElementProperty);
+            set => SetValue(ElementProperty, value);
+        }
+
+        public ElementValueItemControl()
         {
             InitializeComponent();
             // Make a clone of the default ElementValue so that each control instance does not share the default instance

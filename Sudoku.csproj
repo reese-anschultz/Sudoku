@@ -55,15 +55,23 @@
     <Compile Include="Element.cs" />
     <Compile Include="ElementSet.cs" />
     <Compile Include="ElementValue.cs" />
+    <Compile Include="ElementValueControl.xaml.cs">
+      <DependentUpon>ElementValueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementValueItemControl.xaml.cs">
+      <DependentUpon>ElementValueItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ElementValueItemToObjectConverter.cs" />
     <Compile Include="ElementValueToStringConvert.cs" />
     <Compile Include="MultiValueToObjectUsingPredicateConverter.cs" />
-    <Compile Include="SudokuElementValueItemControl.xaml.cs">
-      <DependentUpon>SudokuElementValueItemControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SudokuElementValueControl.xaml.cs">
-      <DependentUpon>SudokuElementValueControl.xaml</DependentUpon>
-    </Compile>
+    <Page Include="ElementValueControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementValueItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,14 +84,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SudokuElementValueItemControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SudokuElementValueControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

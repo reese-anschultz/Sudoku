@@ -15,25 +15,25 @@
         </Grid.ColumnDefinitions>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" >
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding N}" VerticalAlignment="Top"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="{Binding N}" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="0" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="1" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="2" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="3" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="4" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="5" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="6" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="7" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
-            <local:SudokuElementValueItemControl Element="8" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueControl ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="{Binding N}" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="0" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="1" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="2" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="3" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="4" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="5" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="6" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="7" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
+            <local:ElementValueItemControl Element="8" ElementValue="{Binding E}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red" Margin="0"/>
             <Button Content="Go" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click" />
         </StackPanel>
     </Grid>
