@@ -11,6 +11,7 @@
     <UserControl.Resources>
         <local:ElementValueToStringConverter x:Key="ElementValueToStringConverter"/>
     </UserControl.Resources>
-    <TextBox HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding ElementValue,Mode=OneWay,Converter={StaticResource ElementValueToStringConverter}}" VerticalAlignment="Top" Width="120" IsReadOnly="True" 
+    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" IsReadOnly="True" 
+             Text="{Binding ElementValue,Mode=OneWay,Converter={StaticResource ElementValueToStringConverter}}"
              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ElementValueControl}}"/>
 </UserControl>
